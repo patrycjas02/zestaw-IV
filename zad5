@@ -1,0 +1,32 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+int main (){
+
+    srand(time(NULL));
+    int n=12;
+    int B[n];
+
+    for(int i=0; i<n; i++){
+        B[i]=rand()%10+1;
+    }
+
+    for(int i=0; i<n; i++){
+        cout<< B[i]<<" ";
+    }
+    cout<<endl;
+
+    int x=0;
+
+    for (int i=0; i<n; i++){
+        if(B[i]>x){
+            x=B[i];
+        }
+    }
+    cout<<"Najwieksza wartosc w tabeli: "<<x<<endl;
+
+return 0;
+}
