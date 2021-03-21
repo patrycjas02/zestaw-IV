@@ -1,0 +1,36 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+int main (){
+
+    int n;
+    cout<<"Podaj liczbe, ktora bedzie gorna granica wypisywanych liczb pierwszych: ";
+    cin>>n;
+    int A[n];
+
+    for(int i=0; i<n-2; i++){//uwzgledniamy liczby wieksze od 1
+        A[i]=i+2;
+    }
+
+    for(int j=2; j<=n/2; j++){
+        for(int i=0; i<=n-2; i++){
+            if(A[i]%j==0 && A[i]!=j){
+                A[i]=0;
+            }
+        }
+    }
+
+    cout<<endl<<"Liczby pierwsze: ";
+    for(int i=0; i<n-2; i++){
+        if(A[i]!=0){
+            cout<<A[i]<<" ";
+        }
+    }
+
+    cout<< endl;
+
+return 0;
+}
